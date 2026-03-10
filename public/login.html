@@ -1,0 +1,87 @@
+<HTML>
+  <style>
+    #submit {
+      background-color: #ECD935; 
+      border: 2px solid orange;
+      color: maroon;
+      padding: 10px 22px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 40px;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+      font-size:20px;
+      font-family: 'Slabo 27px', serif;
+      }
+      #submit:hover {
+      background-color: #02042D;
+      color: white;
+      font-family:"Comic Sans MS", "Comic Sans", cursive;
+      border: 2px solid white;
+      }
+      #create{
+      background-color: #ECD935; 
+      border: 2px solid orange;
+      color: maroon;
+      padding: 10px 22px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 40px;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+      font-size:20px;
+      font-family: 'Slabo 27px', serif;
+      }
+  </style>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./css/login.css">
+    <link rel="icon" href="./img/pizza.png">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="pwd-container">
+        <div class="col-md-4" >
+          <section class="login-form">
+            <form method="post" action="/login" role="login">
+              <a href='/index' ><img id='pizza' src="./img/pizza.png" class="img-responsive" alt="" /></a>
+              <div class="row">
+                <div class="col-lg-3" id="title-div">
+                  <div class="input-group" >
+                    <h1>RUM TUM</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="row" id="input-div" >
+                <div class="col-lg-3">
+                  <div class="input-group">
+                    <input type="email" name="email" required class="form-control input-lg" />
+                    <br />
+                    <input type="password" name="password" class="form-control input-lg" id="password" required />
+                    <br />
+                    <span class="input-group-btn">
+                      <button type="submit" class="btn btn-primary" id='submit'>Login</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <a href="/registration" id='create'>Create account</a><!-- or <a href="#">reset your password</a>-->
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+      <script type="text/javascript" src="/js/lib/popper.min.js"></script>
+      <script src="/js/lib/jquery-3.2.1.min.js"></script>
+      <script src="/js/login.js"></script>
+    </div>
+  </body>
+</HTML>

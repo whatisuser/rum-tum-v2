@@ -1,0 +1,192 @@
+<html>
+   <style type="text/css" media="screen">
+        #pizza{
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 10000ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spin;
+  -moz-animation-duration: 10000ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: spin;
+  -ms-animation-duration: 40000ms;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+  -o-transition: rotate(3600deg);
+}
+      @-moz-keyframes spin {from { -moz-transform: rotate(0deg); } to { -moz-transform: rotate(360deg); }}
+      @-webkit-keyframes spin {from { -webkit-transform: rotate(0deg); }to { -webkit-transform: rotate(360deg); }}
+      @keyframes spin {from {transform:rotate(0deg);} to {transform:rotate(360deg);}}
+    
+    body {
+        background-image: url(img/background.RumTum.jpg);
+        color:white;
+        font-size:44px;
+        font-family: "Georgia", "Times", serif;
+        -webkit-font-smoothing: antialiased;
+    }
+    a {
+        text-decoration: none;
+    }
+    
+    label {
+       color: white;
+       font-size:25px;
+              font-weight:bold;
+      font-family: "comic san", Helvetica, Arial, sans-serif;
+      margin:0px;
+      padding: 10px;
+      color: #ED1C24;
+      -webkit-text-stroke: .5px black;
+      color: white;
+      text-shadow:
+       2px 2px 0 #000,
+      -.66px -.66px 0 #000,  
+       .66px -.66px 0 #000,
+      -.66px .66px 0 #000,
+       .66px .66px 0 #000;
+    }
+    
+    p {
+       color: white;
+       font-size:20px;
+              font-weight:bold;
+      font-family: "comic san", Helvetica, Arial, sans-serif;
+      margin:0px;
+      padding: 10px;
+      color: #ED1C24;
+      -webkit-text-stroke: 1px black;
+      color: white;
+      text-shadow:
+       2px 2px 0 #000,
+      -.66px -.66px 0 #000,  
+       .66px -.66px 0 #000,
+      -.66px .66px 0 #000,
+       .66px .66px 0 #000;
+    }
+    
+    #register-legend {
+       color: white;
+       font-size:45px;
+       font-weight:bold;
+      font-family: "comic san", Helvetica, Arial, sans-serif;
+      margin:0px;
+      padding: 10px;
+      color: #ED1C24;
+      -webkit-text-stroke: 2px black;
+      color: white;
+      text-shadow:
+       2px 2px 0 #000,
+      -.66px -.66px 0 #000,  
+       .66px -.66px 0 #000,
+      -.66px .66px 0 #000,
+       .66px .66px 0 #000;
+       
+    }
+    #btn {
+      background-color: #ECD935; 
+      border: 2px solid orange;
+      color: maroon;
+      padding: 10px 22px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 40px;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+      font-size:20px;
+      font-family: 'Slabo 27px', serif;
+    }
+    
+</style>
+   <head>
+      <title>Registration forms</title>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+      <link href="/css/lib/bootstrap.min.css" rel="stylesheet">
+      <link href="/css/registration-form.css">
+      <!-- Bootstrap CSS -->
+      <!--Favicon-->
+      <link rel="icon" href="./img/pizza.png">
+   </head>
+   <body>
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-4" id="left">
+                  </div>
+                  <div class="col-md-4" id="first_form">
+                    <a href='/index'><img class="img-responsive" style="margin:15px;" id="pizza" src="./img/pizza.png" /></a>
+                     <form class="form-horizontal" action='/register' method="post" >
+                        <fieldset>
+                           <div id="legend">
+                              <legend id="register-legend">Register</legend>
+                           </div>
+                           <div class="control-group">
+                              <!-- First name -->
+                              <label class="control-label"  for="username">Last Name</label>
+                              <div class="controls">
+                                 <input type="text" id="last_name" name="last_name" placeholder="" class="input-xlarge">
+                                 <p class="help-block"></p>
+                              </div>
+                           </div>
+                           <div class="control-group">
+                              <!-- Last Name -->
+                              <label class="control-label"  for="username">First Name</label>
+                              <div class="controls">
+                                 <input type="text" id="first_name" name="first_name" placeholder="" class="input-xlarge">
+                                 <p class="help-block"></p>
+                              </div>
+                           </div>
+                           <div class="control-group">
+                              <!-- E-mail -->
+                              <label class="control-label" for="email">E-mail</label>
+                              <div class="controls">
+                                 <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
+                                 <p class="help-block">Please provide your E-mail</p>
+                              </div>
+                           </div>
+                           <div class="control-group">
+                              <!-- Password-->
+                              <label class="control-label" for="password">Password</label>
+                              <div class="controls">
+                                 <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+                                 <p class="help-block">Password should be at least 4 characters</p>
+                              </div>
+                           </div>
+                           <div class="control-group">
+                              <!-- Password -->
+                              <label class="control-label"  for="password_confirm">Password (Confirm)</label>
+                              <div class="controls">
+                                 <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge">
+                                 <p class="help-block">Please confirm password</p>
+                              </div>
+                           </div>
+                           <div class="control-group">
+                              <!-- Button -->
+                              <div class="controls">
+                                 <button type="submit" id="btn" class="btn btn-primary">Create Account</button>
+                              </div>
+                           </div>
+                        </fieldset>
+                     </form>
+                  </div>
+                  <div class="col-md-4" id="right">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script type="text/javascript" src="/js/lib/popper.min.js"></script>
+      <script src="/js/lib/jquery-3.2.1.min.js"></script>
+      <script src="/js/lib/bootstrap.min.js"></script>
+   </body>
+</html>

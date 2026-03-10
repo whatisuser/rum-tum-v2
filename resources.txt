@@ -1,0 +1,8 @@
+THESE ARE USEFUL:
+https://rubyplus.com/articles/1141-SQL-Basics-SQLite3-Ruby-Driver-Basics
+http://sinatrarb.com/intro.html
+https://learn.co/lessons/sinatra-forms-params-readme-walkthrough
+
+THESE MIGHT BE A LITTLE USEFUL:
+http://www.layoutit.com/build#
+http://www.sqlitetutorial.net/sqlite-insert

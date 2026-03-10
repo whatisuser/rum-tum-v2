@@ -1,0 +1,135 @@
+@CHARSET "UTF-8";
+/*
+over-ride "Weak" message, show font in dark grey
+*/
+label {
+  display: inline-block;
+  width: 140px;
+  text-align: right;
+}
+
+/*
+Reference:
+http://www.bootstrapzen.com/item/135/simple-login-form-logo/
+*/
+
+* {
+    -webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	outline: none;
+}
+
+        .form-control {
+	  position: relative;
+	  font-size: 16px;
+	  height: auto;
+	  padding: 10px;
+		@include box-sizing(border-box);
+
+		&:focus {
+		  z-index: 2;
+		}
+	}
+	
+body {
+	background:url('https://eoimages.gsfc.nasa.gov/images/imagerecords/43000/43196/ISS022-E-078463_lrg.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.login-form {
+	margin-top: 60px;
+}
+
+form[role=login] {
+	color: #ffffff;
+	padding: 26px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+	form[role=login] img {
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 35px;
+	}
+	form[role=login] input,
+	form[role=login] button {
+		font-size: 18px;
+		margin: 16px 0;
+	}
+	form[role=login] > div {
+		text-align: center;
+	}
+
+.form-links {
+	text-align: center;
+	margin-top: 1em;
+	margin-bottom: 50px;
+}
+	.form-links a {
+		color: #fff;
+	}
+
+
+
+a:hover {
+    color: red;
+}
+ #pizza{
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 10000ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spin;
+  -moz-animation-duration: 10000ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: spin;
+  -ms-animation-duration: 40000ms;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+  -o-transition: rotate(3600deg);
+}
+      @-moz-keyframes spin {from { -moz-transform: rotate(0deg); } to { -moz-transform: rotate(360deg); }}
+      @-webkit-keyframes spin {from { -webkit-transform: rotate(0deg); }to { -webkit-transform: rotate(360deg); }}
+      @keyframes spin {from {transform:rotate(0deg);} to {transform:rotate(360deg);}}
+  h1 {
+      font-size:70px;
+      font-weight:bold;
+      font-family: "SigmarOne", Helvetica, Arial, sans-serif;
+      margin:0px;
+      padding: 10px;
+      color: #ED1C24;
+      -webkit-text-stroke: 4px black;
+      color: white;
+      text-shadow:
+       3px 3px 0 #000,
+      -1px -1px 0 #000,  
+       1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+      }
+      h2 {
+      font-size:20px;
+      font-weight:bold;
+      font-family: "SigmarOne", Helvetica, Arial, sans-serif;
+      margin:0px;
+      padding: 10px;
+      color: #ED1C24;
+      -webkit-text-stroke: 4px black;
+      color: white;
+      text-shadow:
+       3px 3px 0 #000,
+      -1px -1px 0 #000,  
+       1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+      }
+      #pizza{
+      	height: 155px;
+      	width:155px;
+      }

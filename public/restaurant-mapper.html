@@ -1,0 +1,252 @@
+<!doctype html>
+<!-- we keep it 
+running @ 
+http://rum-tum-ruby-rafaeleselmejor.c9users.io:8080/restaurant-mapper.html
+-->
+<html lang="en">
+  <head>
+    <title>RumTum - Restaurant Mapper</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <!--
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    -->
+    <link href="/css/lib/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <!--Favicon-->
+    <link rel="icon" href="./img/pizza.png">
+   </head> 
+    
+    <style type="text/css">
+    #pizza{
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 10000ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spin;
+  -moz-animation-duration: 10000ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: spin;
+  -ms-animation-duration: 40000ms;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+  -o-transition: rotate(3600deg);
+}
+      @-moz-keyframes spin {from { -moz-transform: rotate(0deg); } to { -moz-transform: rotate(360deg); }}
+      @-webkit-keyframes spin {from { -webkit-transform: rotate(0deg); }to { -webkit-transform: rotate(360deg); }}
+      @keyframes spin {from {transform:rotate(0deg);} to {transform:rotate(360deg);}}
+      .meta{
+      white-space: nowrap;
+      font-size:40px;
+      }
+      a:hover{
+      color:red;
+      }
+      #map {
+      margin: auto;
+      height: 80%;
+      width: 75%;
+      }
+     html , body {
+      height: 100%;
+      background:url('https://eoimages.gsfc.nasa.gov/images/imagerecords/43000/43196/ISS022-E-078463_lrg.jpg');
+      margin: 0;
+      padding: 0;
+      /* background:url("./img/pizza.png"); */
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      color:white;
+      text-align: center;
+      height:100%;
+      width:100%;
+      white-space:nowrap;
+      display: block;
+  
+     }
+     .header {
+      background: #A40000;
+      text-align: center;
+      }
+      #navegation {
+      background: #FFD966;
+      color: maroon;
+      font-size: 100px;
+      }
+      .restaurant-name{
+      height:100%;
+      width:100%;
+
+      }
+      .submit {
+      background-color: #ECD935; 
+      border: 2px solid black;
+      color: maroon;
+      padding: 10px 22px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin-top: 40px;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 8px;
+      font-size:50px;
+      font-family: 'Slabo 27px', serif;
+      }
+      .submit:hover {
+      background-color: #02042D;
+      color: white;
+      font-family:"Helvetica", "Comic Sans", cursive;
+      border: 2px solid white;
+      }
+      #test{
+     
+      background-color:rgba(239, 203, 95, 0.90);
+      }
+      img {
+      margin: 25px;
+      height: 190px;
+      width: 190px;
+      }
+      button {
+      margin: 30px;
+      }
+      .jumbotron {
+        max-width: 100%;
+        max-height: 100%;
+        background:rgba(237, 28, 36, 0.5);
+      }
+      
+      .jumbotron h1 {
+      font-size:70px;
+      font-weight:bold;
+      /* font-family: 'Roboto', sans-serif; */
+      font-family: "SigmarOne", Helvetica, Arial, sans-serif;
+      margin:0px;
+      padding: 10px;
+      color: #ED1C24;
+    /* font-family: 'Slabo 27px', serif;*/
+      -webkit-text-stroke: 4px black;
+   color: white;
+   text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+      }
+      h3 {
+        color: white;
+        font-family: 'Slabo 27px', serif;
+      }
+      span {
+        color: white;
+        font-family: 'Slabo 27px', serif;
+      }
+      .button-link {
+      background-color:#ECD935; 
+      border: 2px solid orange;
+      color: maroon;
+      padding: 10px 22px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 40px;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+      font-size:20px;
+      font-family: 'Slabo 27px', serif;
+    }
+    .container{
+      width: 960px;
+      position: relative;
+      margin:0 auto;
+      line-height: 1.4em;
+    }
+    @media only screen and (max-width: 479px){
+    .container { width: 90%; }
+}
+#restaurant-info{
+  width: 960px;
+      position: relative;
+      margin:0 auto;
+      line-height: 1.4em;
+      font-family: helvetica;
+      
+  
+}
+ @media only screen and (max-width: 479px){
+    #restaurant-info { width: 90%; }
+}
+ .new-restaurant{
+     width: 960px;
+      position: relative;
+      margin:0 auto;
+      line-height: 1.4em;
+   
+ }
+     @media only screen and (max-width: 479px){
+    .new-restaurant { width: 90%; }
+}
+ .restaurant-results{
+     width: 960px;
+      position: relative;
+      margin:0 auto;
+      line-height: 1.4em;
+ }
+  @media only screen and (max-width: 479px){
+    .restaurant-results { width: 90%; }
+}
+
+/* Have not created any styling for additional-content */
+
+
+    </style>
+  <body>
+ 
+    <div id="landing">
+    <div class="container">
+        <a class ='button-link' href='/index'>Home</a>
+        <a class='button-link' id="login-create" href='/login' >Login or Create</a>
+        <div class="jumbotron">
+          <h1>RUM TUM</h1>
+          <a ><img  id="pizza" src="./img/pizza.png" /><br />
+         <!-- <button class="submit" id="firstButton">Hungry?</button>-->
+          <!--<button class="submit" id="firstButton">Hungry?</button>-->
+        </div>
+      </div>
+    </div>
+    
+    <div class="container" id="test">
+      <!-- this is where the map was printing from -->
+      <div class="restaurant-results restaurant-items" id='restaurant-info'>
+      </div>
+      <div id="additional-content">Check out the menu!
+      </div>
+      <br/>
+      <br/>
+      <!-- Where the thumbnail image will appear | check the script during when the ajax request is being made -- there is a featured thumbnail being assigned -->
+      <div id="restaurant-contents"></div>
+      <!-- <span class="loading-results" id="map"></span>-->
+      
+      <div class="new-restaurant" id="new-direction">
+        <button class="submit" id="new-restaurant" >Not Feeling It</button>
+        <button class="submit" id="get-direction" target = "_blank">Let's Go!</button>
+      </div>
+    </div>
+    
+    <div id="map"></div>
+    
+    <script src="/js/lib/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="/js/app.js"></script>
+    <!-- Google Map API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFIsB5Fbjh_aYwDNe3G1owSL39IKtQODA&callback=initMap"></script>
+  </body>
+</html>
